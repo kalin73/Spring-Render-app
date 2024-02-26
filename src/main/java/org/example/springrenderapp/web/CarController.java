@@ -1,6 +1,7 @@
-package com.example.demo.web;
+package org.example.springrenderapp.web;
 
-import com.example.demo.domain.Car;
+
+import org.example.springrenderapp.domain.Car;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
