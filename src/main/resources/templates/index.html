@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <h1>Hello world!</h1>
+    <h2>Choose car</h2>
     <div th:each="car : ${cars}" th:object="${car}">
-        <h1 th:text="*{brand}"></h1>
-        <h1 th:text="*{color}"></h1>
+        <h1 th:text="*{brand + ' - '+ model}"></h1>
+        <a th:href="@{/{id}(id=*{id})}">Get</a>
     </div>
 </head>
 <body>

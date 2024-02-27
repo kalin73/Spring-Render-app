@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <div th:object="${car}">
+        <img th:src="*{image}" />
         <h1 th:text="*{brand}"></h1>
+        <h1 th:text="*{model}"></h1>
         <h1 th:text="*{color}"></h1>
     </div>
 </head>
