@@ -11,10 +11,12 @@ import java.util.List;
 
 @Controller
 public class CarController {
+    private static List<Car> cars = List.of(new Car(1, "Audi", "Grey"),
+            new Car(2, "BMW", "Black"));
+
     @GetMapping("/")
     public ModelAndView getAllCars(ModelAndView modelAndView) {
-        List<Car> cars = List.of(new Car(1, "Audi", "Grey"),
-                new Car(1, "BMW", "Black"));
+
         modelAndView.addObject("cars", cars);
         modelAndView.setViewName("index");
 
@@ -23,6 +25,8 @@ public class CarController {
 
     @GetMapping("/{id}")
     public ModelAndView getCarById(@PathVariable(name = "id") int id, ModelAndView modelAndView) {
+        modelAndView.addObject("car", cars.stream().filter(c -> c.id() == id).findFirst().orElseThrow());
+        modelAndView.setViewName("car");
 
         return modelAndView;
     }
